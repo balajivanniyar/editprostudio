@@ -1432,6 +1432,49 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            /* Hero Mobile Fix */
+            .hero {
+                min-height:auto;
+                padding:120px 0 60px;
+            }
+
+            .hero .container {
+                display:grid;
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display:flex;
+                justify-content:center;
+                margin-top: 20px;
+                width: 100%;
+            }
+
+            .hero-visual .floating-card {
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                padding: 20px;
+                aspect-ratio: auto;
+            }
+
+            .floating-badge {
+                position: static !important;
+                display: inline-block;
+                margin: 5px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -2068,7 +2111,7 @@
                 message: document.querySelector('[name="message"]').value
             };
 
-            const response = await fetch("http://127.0.0.1:5000/submit", {
+            const response = await fetch("/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
